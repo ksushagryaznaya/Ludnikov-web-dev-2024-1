@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Task 1</title>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" type="text/css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="styles.css" />
     </head>
     <body>
@@ -13,19 +13,19 @@
                 Food Construct
             </h1>
             <nav>
-                <a href="#">О нас</a>
-                <a href="#">Собрать ланч</a>
+                <a href="index.html" class="active">О нас</a>
+                <a href="/pages/lunch.html">Собрать ланч</a>
                 <a href="#">Заказы</a>
                 <a href="#foot">Контакты</a>
             </nav>
         </header>
         <main>
             <section>
-                <img src="https://mospolytech-web-course.netlify.app/images/lunch.jpg" width="745" height="495" alt="Обед Карпова!!!">
+                <img src="https://mospolytech-web-course.netlify.app/images/lunch.jpg" id="mainimg" width="745" height="495" alt="Обед Карпова!!!">
                 <h2>
                     О нас
                 </h2>
-                <p>
+                <p id="mainpar">
                     Food Construct - доставка бизнес-ланчей в Москве. Мы привезем вам горячую вкусную еду в любую точку города к назначенному времени.
                 </p>
             </section>
@@ -83,7 +83,7 @@
             </section>
         </main>
         <footer>
-            <p id="foot"><a id="foot" href="#">Позвонить нам +7-000-000-00-00</a></p>
+            <p><a id="foot" href="tel:+70000000000">Позвонить нам: +7-000-000-00-00</a></p>
         </footer>
     </body>
 </html>
