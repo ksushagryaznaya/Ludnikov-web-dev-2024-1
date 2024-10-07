@@ -106,53 +106,51 @@
 
     <section id="makeanorder">
         <h2>Сделать заказ</h2>
-        <div>
-            <form>
-                <div>
-                    <p class="zagol">Ваш заказ</p> 
-                    <label for="sup">Суп</label>
-                    <select name="sup">
-                        <option>-- Выберите суп --</option>
-                    </select> <br>
-                    <label for="mainbludo">Главное блюдо</label> 
-                    <select name="mainbludo">
-                        <option>-- Выберите главное блюдо --</option>
-                    </select> <br>
-                    <label for="napitok">Напиток</label>
-                    <select name="napitok">
-                        <option>-- Выберите напиток --</option>
-                    </select> <br>
-                    <label for="comments">Комментарии к заказу</label> <br>
-                    <textarea name="comments"></textarea>
+        <form>
+            <div>
+                <p class="zagol">Ваш заказ</p> 
+                <label for="sup">Суп</label>
+                <select name="sup" id="sup">
+                    <option>-- Выберите суп --</option>
+                </select> <br>
+                <label for="mainbludo">Главное блюдо</label> 
+                <select name="mainbludo" id="mainbludo">
+                    <option>-- Выберите главное блюдо --</option>
+                </select> <br>
+                <label for="napitok">Напиток</label>
+                <select name="napitok" id="napitok">
+                    <option>-- Выберите напиток --</option>
+                </select> <br>
+                <label for="comments">Комментарии к заказу</label> <br>
+                <textarea name="comments" id="comments"></textarea>
+            </div>
+            <div>
+                <p class="zagol">Ваши данные</p>
+                <label for="imya">Имя</label>
+                <input type="text" name="imya" id="imya" required /> <br>
+                <label for="email">Email</label>
+                <input name="email" id="email" required /> <br>
+                <label>
+                    <input type="checkbox" name="inform" checked />
+                    Получать информацию о скидках и акциях
+                </label> <br>
+                <label for="phone">Номер телефона</label>
+                <input type="tel" name="phone" id="phone" required /> <br>
+                <label for="address">Адрес доставки</label>
+                <input type="text" name="address" id="address" required/>
+                <p class="note"><i>Доставка осуществляется только по Москве</i></p>
+                <p>Время доставки:</p>
+                <label><input type="radio" name="delivery_time" /> Как можно скорее</label> <br>
+                <label><input type="radio" name="delivery_time" /> К указанному времени</label> <br>
+                <label for="time">Укажите время доставки</label>
+                <input type="time" min="07:00" max="23:00" step="300" id="time" required/>
+                <p class="note"><i>Доступное время доставки с 7:00 до 23:00</i></p>
+                <div id="buttons">
+                    <button type="reset">Сбросить</button>
+                    <button type="submit">Отправить</button>
                 </div>
-                <div>
-                    <p class="zagol">Ваши данные</p>
-                    <label for="imya">Имя</label>
-                    <input type="text" name="imya" required /> <br>
-                    <label for="email">Email</label>
-                    <input name="email" required /> <br>
-                    <label>
-                        <input type="checkbox" name="inform" checked />
-                        Получать информацию о скидках и акциях
-                    </label> <br>
-                    <label for="phone">Номер телефона</label>
-                    <input type="tel" name="phone" required /> <br>
-                    <label for="address">Адрес доставки</label>
-                    <input type="text" name="address" required/>
-                    <p id="note"><i>Доставка осуществляется только по Москве</i></p>
-                    <p>Время доставки:</p>
-                    <label><input type="radio" name="delivery_time" /> Как можно скорее</label> <br>
-                    <label><input type="radio" name="delivery_time" /> К указанному времени</label> <br>
-                    <label for="time">Укажите время доставки</label>
-                    <input type="time" min="07:00" max="23:00" step="300" required/>
-                    <p id="note"><i>Доступное время доставки с 7:00 до 23:00</i></p>
-                    <div id="buttons">
-                        <button type="reset">Сбросить</button>
-                        <button type="submit">Отправить</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </section>    
 
     <footer>

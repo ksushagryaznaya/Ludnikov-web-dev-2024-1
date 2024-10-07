@@ -86,7 +86,6 @@ section {
 main section div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    size: 1fr;
     grid-column-gap: 10px;
 }
 
@@ -197,6 +196,10 @@ footer a:hover {
     margin-bottom: 20px !important;
 }
 
+.note {
+    font-size: 12px;
+}
+
 #mainimg {
     height: auto;
     margin-left: 64px;
@@ -282,10 +285,6 @@ footer a:hover {
 
 #buttons button:hover {
     background-color: #ccc;
-}
-
-#note {
-    font-size: 12px;
 }
 
 @media (max-width: 800px) {
