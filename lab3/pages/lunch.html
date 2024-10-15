@@ -107,82 +107,82 @@
     <section id="makeanorder">
         <h2>Сделать заказ</h2>
         <form action="https://httpbin.org/post" method="post">
-            <div>
+            <div class="zakazcol">
                 <p class="zagol">Ваш заказ</p> 
                 <label for="sup">
                     Суп
                 </label>
-                <select name="sup" id="sup">
-                    <option>
+                <select name="sup" id="sup" required>
+                    <option value="">
                         -- Выберите суп --
                     </option>
-                    <option>
+                    <option value="gaspacho">
                         Гаспачо
                     </option>
-                    <option>
+                    <option value="gribsup">
                         Грибной суп-пюре
                     </option>
-                    <option>
+                    <option value="norsup">
                         Норвежский суп
                     </option>
-                </select> <br>
+                </select>
                 <label for="mainbludo">
                     Главное блюдо
                 </label> 
-                <select name="mainbludo" id="mainbludo">
-                    <option>
+                <select name="mainbludo" id="mainbludo" required>
+                    <option value="">
                         -- Выберите главное блюдо --
                     </option>
-                    <option>
+                    <option value="jharkart">
                         Жареная картошка с грибами
                     </option>
-                    <option>
+                    <option value="lasagna">
                         Лазанья
                     </option>
-                    <option>
+                    <option value="chickencutlets">
                         Котлеты из курицы с картофельным пюре
                     </option>
-                </select> <br>
+                </select>
                 <label for="napitok">
                     Напиток
                 </label>
-                <select name="napitok" id="napitok">
-                    <option>
+                <select name="napitok" id="napitok" required>
+                    <option value="">
                         -- Выберите напиток --
                     </option>
-                    <option>
+                    <option value="orangejuice">
                         Апельсиновый сок
                     </option>
-                    <option>
+                    <option value="applejuice">
                         Яблочный сок
                     </option>
-                    <option>
+                    <option value="carrotjuice">
                         Морковный сок
                     </option>
-                </select> <br>
+                </select>
                 <label for="comments">
                     Комментарии к заказу
-                </label> <br>
+                </label>
                 <textarea name="comments" id="comments"></textarea>
             </div>
-            <div>
+            <div class="zakazcol">
                 <p class="zagol">Ваши данные</p>
                 <label for="imya">
                     Имя
                 </label>
-                <input type="text" name="imya" id="imya" required /> <br>
+                <input type="text" name="imya" id="imya" required />
                 <label for="email">
                     Email
                 </label>
-                <input name="email" id="email" required /> <br>
+                <input name="email" id="email" required />
                 <label>
                     <input type="checkbox" name="inform" checked />
                     Получать информацию о скидках и акциях
-                </label> <br>
+                </label>
                 <label for="phone">
                     Номер телефона
                 </label>
-                <input type="tel" name="phone" id="phone" required /> <br>
+                <input type="tel" name="phone" id="phone" required />
                 <label for="address">
                     Адрес доставки
                 </label>
@@ -193,14 +193,16 @@
                     </i>
                 </p>
                 <p>Время доставки:</p>
-                <label>
-                    <input type="radio" name="delivery_time" /> 
-                    Как можно скорее
-                </label> <br>
-                <label>
-                    <input type="radio" name="delivery_time" />
-                    К указанному времени
-                </label> <br>
+                <fieldset>
+                    <label>
+                        <input type="radio" name="delivery_time" /> 
+                        Как можно скорее
+                    </label>
+                    <label>
+                        <input type="radio" name="delivery_time" />
+                        К указанному времени
+                    </label>
+                </fieldset>
                 <label for="time">
                     Укажите время доставки
                 </label>
