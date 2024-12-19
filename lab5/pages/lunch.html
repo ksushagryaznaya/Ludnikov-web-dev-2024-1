@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" type="text/css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="../styles.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../styles.css" />
         <title>Food Construct</title>
     </head>
     <body>
@@ -23,19 +23,55 @@
     <main>
         <section>
             <h2>Выберите суп</h2>
+            <div class="filters" id="soup-filters">
+                <button data-kind="meat">Мясное</button>
+                <button data-kind="fish">Рыбное</button>
+                <button data-kind="vegie">Вегетарианское</button>
+            </div>
             <div class="items" id="soup">
             </div>
         </section>
 
         <section>
             <h2>Выберите главное блюдо</h2>
+            <div class="filters" id="main-filters">
+                <button data-kind="meat">Мясное</button>
+                <button data-kind="fish">Рыбное</button>
+                <button data-kind="vegie">Вегетарианское</button>
+            </div>
             <div class="items" id="main">
             </div>
         </section>
 
         <section>
             <h2>Выберите напиток</h2>
+            <div class="filters" id="drink-filters">
+                <button data-kind="cold">холодное</button>
+                <button data-kind="hot">горячее</button>
+            </div>
             <div class="items" id="drink">
+            </div>
+        </section>
+
+        <section>
+            <h2>Выберите салат или стартер</h2>
+            <div class="filters" id="saladorstarter-filters">
+                <button data-kind="meat">мясное</button>
+                <button data-kind="fish">рыбное</button>
+                <button data-kind="vegie">вегетарианское</button>
+            </div>
+            <div class="items" id="saladorstarter">
+            </div>
+        </section>
+
+        <section>
+            <h2>Выберите десерт</h2>
+            <div class="filters" id="dessert-filters">
+                <button data-kind="little">маленькая порция</button>
+                <button data-kind="mid">средняя порция</button>
+                <button data-kind="large">большая порция</button>
+            </div>
+            <div class="items" id="dessert">
             </div>
         </section>
     </main>
