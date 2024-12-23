@@ -42,14 +42,17 @@
 
     <section id="makeanorder">
         <h2>Сделать заказ</h2>
-        <form action="https://httpbin.org/post" method="post">
+        <form id = "formmm" action="https://httpbin.org/post" method="post">
             <div class="zakazcol">
                 <p class="zagol">Ваш заказ</p>
                 <div id = "zakaz"> <strong style = "margin-bottom: 15px;">Ничего не выбрано</strong>
                 </div>
 
-                <input type="hidden" id="orderDetails" name="orderDetails" required/>
+                <input type="hidden" id="zakazSoup" name="orderSoup"  />
+                <input type="hidden" id="zakazMain" name="orderMain"  />
+                <input type="hidden" id="zakazDrink" name="orderDrink" />
                 <input type="hidden" id="totalPrice" name="totalPrice" />
+
                 <label for="comments">
                     Комментарии к заказу
                 </label>
