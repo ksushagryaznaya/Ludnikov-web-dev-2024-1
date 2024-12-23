@@ -1,164 +1,126 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="../styles.css" />
-        <title>Food Construct</title>
-    </head>
-    <body>
-    <header>
-        <h1 id="mainheader">
-            Food Construct
-        </h1>
-        <nav>
-            <a href="../index.html">О нас</a>
-            <a href="./pages/lunch.html" class="active">Собрать ланч</a>
-            <a href="#">Заказы</a>
-            <a href="#foot">Контакты</a>
-        </nav>
-    </header>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Food Construct</title>
+</head>
+<body>
+<header>
+    <h1 id="mainheader">Food Construct</h1>
+    <nav>
+        <a href="../index.html">О нас</a>
+        <a href="./lunch.html" class="active">Собрать ланч</a>
+        <a href="#">Заказы</a>
+        <a href="#foot">Контакты</a>
+    </nav>
+</header>
 
-    <main>
-        <section>
-            <h2>Выберите суп</h2>
-            <div class="filters" id="soup-filters">
-                <button data-kind="meat">мясное</button>
-                <button data-kind="fish">рыбное</button>
-                <button data-kind="vegie">вегетарианское</button>
-            </div>
-            <div class="items" id="soup">
-            </div>
-        </section>
+<main>
+    <section>
+        <h2>Выберите суп</h2>
+        <div class="filters" id="soup-filters">
+            <button data-kind="meat">мясное</button>
+            <button data-kind="fish">рыбное</button>
+            <button data-kind="vegie">вегетарианское</button>
+        </div>
+        <div class="items" id="soup"></div>
+    </section>
 
-        <section>
-            <h2>Выберите главное блюдо</h2>
-            <div class="filters" id="main-filters">
-                <button data-kind="meat">мясное</button>
-                <button data-kind="fish">рыбное</button>
-                <button data-kind="vegie">вегетарианское</button>
-            </div>
-            <div class="items" id="main">
-            </div>
-        </section>
+    <section>
+        <h2>Выберите главное блюдо</h2>
+        <div class="filters" id="main-filters">
+            <button data-kind="meat">мясное</button>
+            <button data-kind="fish">рыбное</button>
+            <button data-kind="vegie">вегетарианское</button>
+        </div>
+        <div class="items" id="main"></div>
+    </section>
 
-        <section>
-            <h2>Выберите напиток</h2>
-            <div class="filters" id="drink-filters">
-                <button data-kind="cold">холодное</button>
-                <button data-kind="hot">горячее</button>
-            </div>
-            <div class="items" id="drink">
-            </div>
-        </section>
+    <section>
+        <h2>Выберите напиток</h2>
+        <div class="filters" id="drink-filters">
+            <button data-kind="cold">холодное</button>
+            <button data-kind="hot">горячее</button>
+        </div>
+        <div class="items" id="drink"></div>
+    </section>
 
-        <section>
-            <h2>Выберите салат или стартер</h2>
-            <div class="filters" id="saladorstarter-filters">
-                <button data-kind="meat">мясное</button>
-                <button data-kind="fish">рыбное</button>
-                <button data-kind="vegie">вегетарианское</button>
-            </div>
-            <div class="items" id="saladorstarter">
-            </div>
-        </section>
+    <section>
+        <h2>Выберите салат или стартер</h2>
+        <div class="filters" id="saladorstarter-filters">
+            <button data-kind="meat">мясное</button>
+            <button data-kind="fish">рыбное</button>
+            <button data-kind="vegie">вегетарианское</button>
+        </div>
+        <div class="items" id="saladorstarter"></div>
+    </section>
 
-        <section>
-            <h2>Выберите десерт</h2>
-            <div class="filters" id="dessert-filters">
-                <button data-kind="little">маленькая порция</button>
-                <button data-kind="mid">средняя порция</button>
-                <button data-kind="large">большая порция</button>
-            </div>
-            <div class="items" id="dessert">
-            </div>
-        </section>
-    </main>
+    <section>
+        <h2>Выберите десерт</h2>
+        <div class="filters" id="dessert-filters">
+            <button data-kind="little">маленькая порция</button>
+            <button data-kind="mid">средняя порция</button>
+            <button data-kind="large">большая порция</button>
+        </div>
+        <div class="items" id="dessert"></div>
+    </section>
+</main>
 
-    <section id="makeanorder">
-        <h2>Сделать заказ</h2>
-        <form action="https://httpbin.org/post" method="post">
-            <div class="zakazcol">
-                <p class="zagol">Ваш заказ</p>
-                <div id = "zakaz"> <strong style = "margin-bottom: 15px;">Ничего не выбрано</strong>
-                </div>
+<section id="makeanorder">
+    <h2>Сделать заказ</h2>
+    <form id="formmm" action="https://httpbin.org/post" method="post">
+        <div class="zakazcol">
+            <p class="zagol">Ваш заказ</p>
+            <div id="zakaz"><strong style="margin-bottom: 15px;">Ничего не выбрано</strong></div>
 
-                <input type="hidden" id="orderDetails" name="orderDetails" required/>
-                <input type="hidden" id="totalPrice" name="totalPrice" />
-                <label for="comments">
-                    Комментарии к заказу
+            <input type="hidden" id="zakazSoup" name="orderSoup" />
+            <input type="hidden" id="zakazMain" name="orderMain" />
+            <input type="hidden" id="zakazDrink" name="orderDrink" />
+            <input type="hidden" id="zakazSalad" name="orderSalad" />
+            <input type="hidden" id="zakazDessert" name="orderDessert" />
+            <input type="hidden" id="totalPrice" name="totalPrice" />
+
+            <label for="comments">Комментарии к заказу</label>
+            <textarea name="comments" id="comments"></textarea>
+        </div>
+        <div class="zakazcol">
+            <p class="zagol">Ваши данные</p>
+            <label for="imya">Имя</label>
+            <input type="text" name="imya" id="imya" required />
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required />
+            <label for="phone">Номер телефона</label>
+            <input type="tel" name="phone" id="phone" required />
+            <label for="address">Адрес доставки</label>
+            <input type="text" name="address" id="address" required />
+            <p class="note"><i>Доставка осуществляется только по Москве</i></p>
+            <p>Время доставки:</p>
+            <fieldset>
+                <label>
+                    <input type="radio" name="delivery_time" /> Как можно скорее
                 </label>
-                <textarea name="comments" id="comments"></textarea>
+                <label>
+                    <input type="radio" name="delivery_time" /> К указанному времени
+                </label>
+            </fieldset>
+            <label for="time">Укажите время доставки</label>
+            <input type="time" min="07:00" max="23:00" step="300" id="time" required />
+            <p class="note"><i>Доступное время доставки с 7:00 до 23:00</i></p>
+            <div id="buttons">
+                <button type="reset">Сбросить</button>
+                <button type="submit">Отправить</button>
             </div>
-            <div class="zakazcol">
-                <p class="zagol">Ваши данные</p>
-                <label for="imya">
-                    Имя
-                </label>
-                <input type="text" name="imya" id="imya" required />
-                <label for="email">
-                    Email
-                </label>
-                <input type="email" name="email" id="email" required />
-                <div id = "chego">
-                    <label id = "poluchatinfo">
-                        <input type="checkbox" name="inform" checked />
-                        Получать информацию о скидках и акциях
-                    </label>
-                    <label for="phone">
-                        Номер телефона
-                    </label>
-                </div>
-                <input type="tel" name="phone" id="phone" required />
-                <label for="address">
-                    Адрес доставки
-                </label>
-                <input type="text" name="address" id="address" required/>
-                <p class="note">
-                    <i>
-                        Доставка осуществляется только по Москве
-                    </i>
-                </p>
-                <p>Время доставки:</p>
-                <fieldset>
-                    <label>
-                        <input type="radio" name="delivery_time" /> 
-                        Как можно скорее
-                    </label>
-                    <label>
-                        <input type="radio" name="delivery_time" />
-                        К указанному времени
-                    </label>
-                </fieldset>
-                <label for="time">
-                    Укажите время доставки
-                </label>
-                <input type="time" min="07:00" max="23:00" step="300" id="time" required/>
-                <p class="note">
-                    <i>
-                        Доступное время доставки с 7:00 до 23:00
-                    </i>
-                </p>
-                <div id="buttons">
-                    <button type="reset">
-                        Сбросить
-                    </button>
-                    <button type="submit">
-                        Отправить
-                    </button>
-                </div>
-            </div>
-        </form>
-    </section>    
+        </div>
+    </form>
+    <div id="alertContainer" style="color: red; margin-top: 10px;"></div>
+</section>
 
-    <footer>
-        <p>
-            <a id="foot" href="tel:+70000000000">
-            Позвонить нам: +7-000-000-00-00
-        </a>
-    </p>
-    </footer>
-    <script type="module" src="../renderDishes.js"></script>
-    </body>
+<footer>
+    <p><a id="foot" href="tel:+70000000000">Позвонить нам: +7-000-000-00-00</a></p>
+</footer>
+<script type="module" src = "../renderDishes.js"></script>
+</body>
 </html>

@@ -20,7 +20,8 @@ function renderDishes(arr, filter = {}) {
     Object.keys(sections).forEach(category => {
         sections[category].innerHTML = '';
 
-        const filteredDishes = arr.filter(dish =>
+        const sortedArr = arr.sort((a, b) => a.name.localeCompare(b.name))
+        const filteredDishes = sortedArr.filter(dish =>
             dish.category === category &&
             (!filter[category] || dish.kind === filter[category])
         );
@@ -58,27 +59,64 @@ function addToOrder(dish) {
 
 function updateOrder() {
     const orderElement = document.getElementById("zakaz");
-    orderElement.innerHTML = '';
+    orderElement.innerHTML='';
 
     let totalPrice = 0;
-    let orderDetails = '';
+    let orderSoup, orderMain, orderDrink, orderSalad, orderDessert;
 
     Object.keys(order).forEach(category => {
         const dish = order[category];
+        //const categoryElement = document.createElement("div");
         const categoryElement = document.createElement("div");
-        categoryElement.classList.add("category-item");
+
+        categoryElement.classList.add("category-item")
 
         if (dish) {
             categoryElement.innerHTML = `
                 <p><strong>${getCategoryName(category)}:</strong> ${dish.name} - ${dish.price}₽</p>
             `;
             totalPrice += dish.price;
-            orderDetails += `${getCategoryName(category)}: ${dish.name} - ${dish.price}₽\n`;
+            switch(category) {
+                case 'soup':
+                    orderSoup=dish.keyword;
+                    break;
+                case 'main':
+                    orderMain=dish.keyword;
+                    break;
+                case 'drink':
+                    orderDrink=dish.keyword;
+                    break;
+                case 'saladorstarter':
+                    orderSalad=dish.keyword;
+                    break;
+                case 'dessert':
+                    orderDessert=dish.keyword;
+                    break;
+                default:
+                    break;
+            }
+            orderElement.appendChild(categoryElement);
+            //orderDetails += `${category === 'soup' ? 'Суп' : category === 'main' ? 'Основное блюдо' : 'Напиток'}: ${dish.name} - ${dish.price}₽\n`;
         } else {
             categoryElement.innerHTML = `
                 <p><strong>${getCategoryName(category)}:</strong> Ничего не выбрано</p>
             `;
-            orderDetails += `${getCategoryName(category)}: Ничего не выбрано\n`;
+            switch(category) {
+                case 'soup':
+                    orderSoup=null;
+                case 'main':
+                    orderMain=null;
+                    break;
+                case 'drink':
+                    orderDrink=null;
+                    break;
+                case 'saladorstarter':
+                    orderSalad=null;
+                case 'dessert':
+                    orderDessert=null;
+                default:
+                    break;
+            }
         }
 
         orderElement.appendChild(categoryElement);
@@ -86,17 +124,27 @@ function updateOrder() {
 
     const totalElement = document.createElement("div");
     totalElement.classList.add("total-price");
-    totalElement.innerHTML = `<p><strong>Итого: ${totalPrice}₽</strong></p>`;
+    totalElement.innerHTML = `
+        <p><strong>Итого: ${totalPrice}₽</strong></p>
+    `;
     orderElement.appendChild(totalElement);
 
-    updateForm(orderDetails, totalPrice);
+    updateForm(orderSoup, orderMain, orderDrink, orderSalad, orderDessert, totalPrice);
 }
 
-function updateForm(orderDetails, totalPrice) {
-    const orderTextField = document.getElementById("orderDetails");
+function updateForm(orderSoup, orderMain, orderDrink, orderSalad, orderDessert, totalPrice) {
+    const orderSoupField = document.getElementById("zakazSoup");
+    const orderMainField = document.getElementById("zakazMain");
+    const orderDrinkField = document.getElementById("zakazDrink");
+    const orderSaladField = document.getElementById("zakazSalad");
+    const orderDessertField = document.getElementById("zakazDessert");
     const totalPriceField = document.getElementById("totalPrice");
 
-    orderTextField.value = orderDetails;
+    orderSoupField.value = orderSoup === "" ? null : orderSoup;
+    orderMainField.value = orderMain === "" ? null : orderMain;
+    orderDrinkField.value = orderDrink === "" ? null : orderDrink;
+    orderSaladField.value = orderSalad === "" ? null : orderSalad;
+    orderDessertField.value = orderDessert === "" ? null : orderDessert;
     totalPriceField.value = totalPrice;
 }
 
@@ -131,6 +179,23 @@ function handleFilterClick(event) {
 
     renderDishes(dishes, filters);
 }
+
+document.getElementById("formmm").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const soup = document.getElementById("zakazSoup").value.trim();
+    const main = document.getElementById("zakazMain").value.trim();
+    const drink = document.getElementById("zakazDrink").value.trim();
+    const saladorstarter = document.getElementById("zakazSalad").value.trim();
+    const dessert = document.getElementById("zakazDessert").value.trim();
+
+    if (!soup || !main || !drink || !saladorstarter || !dessert) {
+        alert(`Пожалуйста, выберите ${soup==='' ? "Суп" : main==='' ? "Главное Блюдо" : drink === '' ? "Напиток" : saladorstarter==='' ? "Салат или Стартер" : dessert ==='' ? "Десерт" : ""}.`);
+        return;
+    }
+
+    e.target.submit();
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     renderDishes(dishes);
