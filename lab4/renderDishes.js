@@ -75,7 +75,7 @@ function updateOrder() {
 
         if (dish) {
             categoryElement.innerHTML = `
-                <p><strong>${category === 'soup' ? 'Суп' : category === 'main' ? 'Основное блюдо' : 'Напиток'}:</strong> ${dish.name} - ${dish.price}₽</p>
+                <p><strong>${getCategoryName(category)}:</strong> ${dish.name} - ${dish.price}₽</p>
             `;
             totalPrice += dish.price;
             switch(category) {
